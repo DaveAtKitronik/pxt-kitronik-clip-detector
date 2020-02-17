@@ -23,12 +23,15 @@ namespace Kitronik_Clip_Detector {
 
         //Detection mode selection
     export enum DetectorSensitivity {
+        //% block="Object"
+        Object
         //% block="Low"
         Low,
         //% block="Medium"
         Medium,
         //% block="High"
-        High
+        High,
+
     }
 
     //Global variables and setting default values
@@ -42,15 +45,20 @@ namespace Kitronik_Clip_Detector {
     //% weight=100 blockGap=8
     export function sensorSetup(setupSelected: DetectorSensitivity) 
     {
-        //reading is done by converted ADC reading for a voltage change of the sensor
-        if (setupSelected == DetectorSensitivity.Low) {
+        switch(setupSelected)
+        {
+            case DetectorSensitivity.Low: 
+            detectionLevel =500
+            break
+            case DetectorSensitivity.Medium: 
+            detectionLevel =400
+            break
+            case DetectorSensitivity.High: 
             detectionLevel =300
-        }
-        else if (setupSelected == DetectorSensitivity.Medium) {
-            detectionLevel = 400
-        }
-        else if (setupSelected == DetectorSensitivity.High) {
-            detectionLevel = 500
+            break
+             case DetectorSensitivity.Object: 
+            detectionLevel =100
+            break
         }
     }
 
