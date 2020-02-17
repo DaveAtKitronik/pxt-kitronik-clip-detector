@@ -24,13 +24,13 @@ namespace Kitronik_Clip_Detector {
         //Detection mode selection
     export enum DetectorSensitivity {
         //% block="Object"
-        Object
+        Object,
         //% block="Low"
         Low,
         //% block="Medium"
         Medium,
         //% block="High"
-        High,
+        High
 
     }
 
