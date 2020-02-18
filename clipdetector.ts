@@ -110,7 +110,7 @@ namespace Kitronik_Clip_Detector {
         value = readSensor(pinSelected)
         switch (lightLevel)
         {
-            case LightSelection.Object:
+            case LightSelection.Objct:
             case LightSelection.Light:  //Light and Object are the same - but called out differently for ease of use.
             {
                 if (value >= detectionLevel){
