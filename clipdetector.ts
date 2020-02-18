@@ -2,9 +2,11 @@
  * Kitronik Clip Detector blocks
  **/
 //% weight=100 color=#00A654 icon="\uf29d" block="Clip Detector"
-namespace Kitronik_Clip_Detector {
+namespace Kitronik_Clip_Detector 
+{
     //micro:bit pin selections
-    export enum PinSelection {
+    export enum PinSelection 
+    {
         //% block="P0"
         P0,
         //% block="P1"
@@ -14,7 +16,8 @@ namespace Kitronik_Clip_Detector {
     }
 
     //Light level detection mode selection
-    export enum LightSelection {
+    export enum LightSelection 
+    {
         //% block="Light"
         Light,
         //% block="Dark"
@@ -24,7 +27,8 @@ namespace Kitronik_Clip_Detector {
     }
 
         //Detection mode selection
-    export enum DetectorSensitivity {
+    export enum DetectorSensitivity 
+    {
         //% block="Low"
         Low,
         //% block="Medium"
@@ -37,7 +41,7 @@ namespace Kitronik_Clip_Detector {
     let detectionLevel = 400 //good compromise based on tests for 'dark things' vs 'light things'
 
     /**
-    * @param setupSelected is the selection of how the sensors are setup
+    * @param setupSelected is the selection of preset sensor sensitivity
     */
     //% blockId=kitronik_clip_dectector_setup
     //% block="set sensors to %setupSelected| sensitivity"
@@ -70,7 +74,14 @@ namespace Kitronik_Clip_Detector {
     {
         detectionLevel =150
     }
-
+    
+    // not a block, but here in case someone advanced in the java world want sto set the value directly.
+    // No checking of 'goodness' of value - it should be analog in (0-1023)
+    export function setSensorDetectionLevel(value:number)
+    {
+        detectionLevel = value
+    }
+    
     /**
     * Read sensor block allows user to read the value of the sensor (returns value in range 0-1023)
     * @param pinSelected is the selection of pin to read a particular sensor
