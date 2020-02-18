@@ -19,7 +19,7 @@ namespace Kitronik_Clip_Detector {
         Light,
         //% block="Dark"
         Dark,
-        //% block = "Object"
+        //% block="Object"
         Objct
     }
 
@@ -61,7 +61,6 @@ namespace Kitronik_Clip_Detector {
     /**
     * Set the sensor sensitivity value for detection of objects. 
     * Assumes that the sensors will normally be pointing at free space.
-    * @param none
     */
     //% blockId=kitronik_clip_dectector_object_detect
     //% block="setup sensors for object detection"
