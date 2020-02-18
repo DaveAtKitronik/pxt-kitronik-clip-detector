@@ -41,8 +41,8 @@ namespace Kitronik_Clip_Detector
     let detectionLevel = 400 //good compromise based on tests for 'dark things' vs 'light things'
 
     /**
-    * Set the sensor sensitivity value in case the sensors are not workign well on different surfaces. 
-    * Low sensitivity is for more reflective surfaces / colser distances. 
+    * Set the sensor sensitivity value in case the sensors are not working well on different surfaces. 
+    * Low sensitivity is for more reflective surfaces / closer distances. 
     * High sensitivity is for less reflective surfaces / longer distances.
     * Medium is the default, and a reasonable balance for most surfaces.
     * @param setupSelected is the selection of preset sensor sensitivity
