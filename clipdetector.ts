@@ -18,7 +18,7 @@ namespace Kitronik_Clip_Detector {
         //% block="Light"
         Light,
         //% block="Dark"
-        Dark
+        Dark,
         //% block = "Object"
         Object
     }
