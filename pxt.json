@@ -1,6 +1,6 @@
 {
     "name": "pxt-kitronik-clip-detector",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Blocks to simplify using Kitronik Clippable detector board in PXT",
     "license": "MIT",
     "dependencies": {
