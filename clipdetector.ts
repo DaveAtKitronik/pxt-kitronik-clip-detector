@@ -68,7 +68,7 @@ namespace Kitronik_Clip_Detector {
     //% weight=50    blockGap=8
     export function setSensorToDetectObjects()
     {
-        detectionLevel =100
+        detectionLevel =150
     }
 
     /**
@@ -111,6 +111,15 @@ namespace Kitronik_Clip_Detector {
         switch (lightLevel)
         {
             case LightSelection.Objct:
+            {
+                if (value >= detectionLevel){
+                    result = true
+                }
+                else { 
+                    result = false
+                }
+            }
+            break
             case LightSelection.Light:  //Light and Object are the same - but called out differently for ease of use.
             {
                 if (value >= detectionLevel){
