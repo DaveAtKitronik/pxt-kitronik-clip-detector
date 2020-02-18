@@ -19,19 +19,18 @@ namespace Kitronik_Clip_Detector {
         Light,
         //% block="Dark"
         Dark
+        //% block = "Object"
+        Object
     }
 
         //Detection mode selection
     export enum DetectorSensitivity {
-        //% block="Object"
-        Object,
         //% block="Low"
         Low,
         //% block="Medium"
         Medium,
         //% block="High"
         High
-
     }
 
     //Global variables and setting default values
@@ -41,8 +40,8 @@ namespace Kitronik_Clip_Detector {
     * @param setupSelected is the selection of how the sensors are setup
     */
     //% blockId=kitronik_clip_dectector_setup
-    //% block="setup sensors for %setupSelected| detection"
-    //% weight=100 blockGap=8
+    //% block="set sensors to %setupSelected| sensitivity"
+    //% weight=60 blockGap=8
     export function sensorSetup(setupSelected: DetectorSensitivity) 
     {
         switch(setupSelected)
@@ -56,10 +55,20 @@ namespace Kitronik_Clip_Detector {
             case DetectorSensitivity.High: 
             detectionLevel =300
             break
-             case DetectorSensitivity.Object: 
-            detectionLevel =100
-            break
         }
+    }
+    
+    /**
+    * Set the sensor sensitivity value for detection of objects. 
+    * Assumes that the sensors will normally be pointing at free space.
+    * @param none
+    */
+    //% blockId=kitronik_clip_dectector_object_detect
+    //% block=setup sensors for object detection"
+    //% weight=50    blockGap=8
+    export function readSensor(pinSelected: PinSelection) 
+    {
+        detectionLevel =100
     }
 
     /**
@@ -93,7 +102,7 @@ namespace Kitronik_Clip_Detector {
     * @param lightSelection is the selection of the sensor detecting light or dark
     */
     //% blockId=kitronik_clip_dectector_digital_sensor
-    //% block="sensor on pin %pinSelected| detected %LightSelection"
+    //% block="sensor on pin %pinSelected| detects %LightSelection"
     //% weight=95 blockGap=8
     export function sensorDigitalDetection(pinSelected: PinSelection, lightLevel: LightSelection): boolean{
         let value = 0
@@ -101,7 +110,8 @@ namespace Kitronik_Clip_Detector {
         value = readSensor(pinSelected)
         switch (lightLevel)
         {
-            case LightSelection.Light:
+            case LightSelection.Object:
+            case LightSelection.Light:  //Light and Object are the same - but called out differently for ease of use.
             {
                 if (value >= detectionLevel){
                     result = true
