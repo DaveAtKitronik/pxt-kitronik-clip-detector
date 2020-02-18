@@ -42,6 +42,7 @@ namespace Kitronik_Clip_Detector {
     //% blockId=kitronik_clip_dectector_setup
     //% block="set sensors to %setupSelected| sensitivity"
     //% weight=60 blockGap=8
+    //% advanced=true
     export function sensorSetup(setupSelected: DetectorSensitivity) 
     {
         switch(setupSelected)
