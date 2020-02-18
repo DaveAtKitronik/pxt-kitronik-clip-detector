@@ -20,7 +20,7 @@ kitronik_clip_detector.readSensor(Kitronik_Clip_Detector.PinSelection.P0)
 # Sensor Setup Blocks
 The setup sensors for object detection sets the detection threshold appropriate for objects
 ```blocks
-kitronik_clip_detector.sensorSetup(Kitronik_Clip_Detector.DetectionSelection.Line)
+Kitronik_Clip_Detector.setSensorToDetectObjects()
 ```
 
 # Sensor Threshold Block
