@@ -20,7 +20,7 @@ namespace Kitronik_Clip_Detector {
         //% block="Dark"
         Dark,
         //% block = "Object"
-        Object
+        Objct
     }
 
         //Detection mode selection
@@ -64,7 +64,7 @@ namespace Kitronik_Clip_Detector {
     * @param none
     */
     //% blockId=kitronik_clip_dectector_object_detect
-    //% block=setup sensors for object detection"
+    //% block="setup sensors for object detection"
     //% weight=50    blockGap=8
     export function setSensorToDetectObjects()
     {
