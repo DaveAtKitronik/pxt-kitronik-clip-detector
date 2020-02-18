@@ -66,7 +66,7 @@ namespace Kitronik_Clip_Detector {
     //% blockId=kitronik_clip_dectector_object_detect
     //% block=setup sensors for object detection"
     //% weight=50    blockGap=8
-    export function readSensor(pinSelected: PinSelection) 
+    export function setSensorToDetectObjects()
     {
         detectionLevel =100
     }
